@@ -1,8 +1,5 @@
 <?
 include 'star.php';
-if(!session_is_registered(nome)){
-	setcookie("user","Rubem Mota", time()+60);
-}
 
 ?>
 <html>
