@@ -9,4 +9,3 @@ $tbl_name="members";
 $con = mysql_connect("$host","$username","$password") or die("Connection error");
 mysql_select_db("$db_name") or die("error selecting database");
 ?>
-

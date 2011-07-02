@@ -1,5 +1,5 @@
 <?
-session_start();
+include 'star.php';
 if(!session_is_registered(nome)){
 	setcookie("user","Rubem Mota", time()+60);
 }
@@ -9,7 +9,7 @@ if(!session_is_registered(nome)){
 	<body>
 		<div id="welcome">
 			<?
-			echo "Welcome" . $_COOKIE["user"] . "!<br />";
+			echo "Welcome" . $_SESSION['username'] . "!<br />";
 			?>
 			<p>Share your thoughts</p>
 			<a href="logout.php">Logout</a>
