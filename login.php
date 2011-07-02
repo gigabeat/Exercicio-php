@@ -1,8 +1,8 @@
 <?
 include 'star.php';
 
-$nome = $_REQUEST['nome'];
-$pass = $_REQUEST['pass'];
+$nome = $_POST['nome'];
+$pass = $_POST['pass'];
 
 
 $sql="SELECT * FROM $tbl_name WHERE username = '$nome' and password='$pass'";
@@ -12,8 +12,8 @@ $count = mysql_num_rows($result);
 
 if($count ==1 ){
 	session_register("nome");
-	session_register("pass");
-	header("location:teste.php");
+	if($password == sha1($pass))
+	header("location:teste.php");	
 }
 else {
 	echo "wrong password or username";
