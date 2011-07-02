@@ -11,7 +11,7 @@ mysql_select_db("$db_name") or die("error selecting database");
 
 $sql="INSERT INTO $tbl_name(`username`,`password`,`email`) 
 VALUES
-(`username`,`password`, `email`)";
+('$_POST[username]','$_POST[password]','$_POST[email]')";
 if(!mysql_query($sql,$con))
 	{
 		die(mysql_error());
