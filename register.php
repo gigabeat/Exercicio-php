@@ -8,12 +8,12 @@ $tbl_name="members";
 $con = mysql_connect("$host","$username","$password") or die("Connection error");
 mysql_select_db("$db_name") or die("error selecting database");
 
-$username = $_REQUEST['username'];
-$password = $_REQUEST['password'];
+$user = $_REQUEST['user'];
+$pass = $_REQUEST['pass'];
 $email = $_REQUEST['email'];
 
 
-$sql="INSERT INTO $tbl_name(`username`,`password`,`email`) VALUES('$username','$password', '$email')";
+$sql="INSERT INTO $tbl_name(`username`,`password`,`email`) VALUES('$user','$pass', '$email')";
 if(!mysql_query($sql,$con))
 	{
 		die(mysql_error());
